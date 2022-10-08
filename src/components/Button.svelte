@@ -37,6 +37,7 @@
     align-items: center;
     gap: 0.75em;
     cursor: pointer;
+    overflow: hidden;
   }
   .button:not(.flat) {
     color: var(--primary-color);
@@ -74,7 +75,7 @@
     gap: 0.5em;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: pre;
+    white-space: nowrap;
   }
   .button:not(.solid) {
     position: relative;

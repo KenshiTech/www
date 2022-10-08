@@ -1,12 +1,9 @@
 <script>
   import Card from "src/components/Card.svelte";
-  import Button from "src/components/Button.svelte";
-  import External from "src/icons/External.svelte";
 
   export let image;
   export let title;
   export let description;
-  export let href;
 </script>
 
 <div class="article">
@@ -16,20 +13,21 @@
       <div class="padded">
         <h3>{title}</h3>
         <div class="content">
-          {description}
+          {@html description}
         </div>
         <div class="buttons">
-          <Button {href} solid>
-            Read article <External />
-          </Button>
+          <slot />
         </div>
+        {#if $$slots.footer}
+          <slot name="footer" />
+        {/if}
       </div>
     </div>
   </Card>
 </div>
 
 <style>
-  .articles .article img {
+  .article img {
     max-width: 100%;
   }
   .article-inner {
@@ -51,11 +49,13 @@
     justify-content: start;
     margin-top: 2.5em;
     flex-wrap: wrap;
+    gap: 0.5em;
   }
   .article .padded {
     display: flex;
     flex-direction: column;
     height: 100%;
+    max-width: 100%;
     box-sizing: border-box;
   }
   .article .padded .content {
@@ -63,6 +63,11 @@
   }
   .padded {
     padding: 2em;
+  }
+  @media only screen and (max-width: 798px) {
+    .article {
+      width: 100%;
+    }
   }
   @media only screen and (max-width: 640px) {
     .padded {

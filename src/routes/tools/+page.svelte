@@ -6,6 +6,7 @@
   import Select from "src/components/Select.svelte";
   import Button from "src/components/Button.svelte";
   import Alert from "src/components/Alert.svelte";
+  import Section from "src/components/Section.svelte";
 
   import Copy from "src/icons/Copy.svelte";
   import External from "src/icons/External.svelte";
@@ -305,7 +306,7 @@
   <img src="/images/mask.png" alt="Mask" />
 </div>
 
-<div class="section">
+<Section>
   <h2>Kenshi Tools</h2>
   {#if !userAddress}
     <div class="alert">
@@ -487,9 +488,9 @@
       </Button>
     </div>
   </Card>
-</div>
+</Section>
 
-<div class="section">
+<Section>
   <h2>Wallet Transfer</h2>
   <div class="alert">
     <Alert>
@@ -540,7 +541,7 @@
       </div>
     </Card>
   {/if}
-</div>
+</Section>
 
 <Footer />
 
@@ -552,17 +553,6 @@
   }
   h5 {
     margin: 0;
-  }
-  .section {
-    padding: 4em;
-    padding-top: 2em;
-    flex: 1;
-    min-height: 30%;
-  }
-  @media screen and (max-width: 960px) {
-    .section {
-      padding: 2em;
-    }
   }
   .card-inner {
     display: grid;

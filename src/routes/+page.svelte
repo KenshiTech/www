@@ -3,6 +3,7 @@
   import Footer from "src/components/Footer.svelte";
   import Button from "src/components/Button.svelte";
   import CardButton from "src/components/CardButton.svelte";
+  import Articles from "src/components/Articles.svelte";
   import Article from "src/components/Article.svelte";
   import InfoCard from "src/components/InfoCard.svelte";
   import Product from "src/components/Product.svelte";
@@ -365,23 +366,32 @@
   </div>
 </div>
 
-<div class="articles">
-  <h2>Latest articles</h2>
-  <div class="grid">
-    <Article
-      image="/images/medium/vrf.png"
-      title="Introducing the Kenshi VRF oracles."
-      description="VRFs play an important role in the blockchain, as the blockchain lacks the native functionality to securely generate random numbers due to its deterministic nature..."
+<Articles title="Latest articles">
+  <Article
+    image="/images/medium/vrf.png"
+    title="Introducing the Kenshi VRF oracles."
+    description="VRFs play an important role in the blockchain, as the blockchain lacks the native functionality to securely generate random numbers due to its deterministic nature..."
+  >
+    <Button
       href="https://blog.kenshi.io/introducing-the-kenshi-vrf-oracle-be1cbc4779c9"
-    />
-    <Article
-      image="/images/medium/kenshi-deep-index.png"
-      title="Introducing the Kenshi Deep Indexing Service."
-      description="Information published on the blockchain is publicly available and accessible by anyone who needs it. However, traversing the event logs and searching for specific events is not an easy task..."
+      solid
+    >
+      Read article <External />
+    </Button>
+  </Article>
+  <Article
+    image="/images/medium/kenshi-deep-index.png"
+    title="Introducing the Kenshi Deep Indexing Service."
+    description="Information published on the blockchain is publicly available and accessible by anyone who needs it. However, traversing the event logs and searching for specific events is not an easy task..."
+  >
+    <Button
       href="https://blog.kenshi.io/introducing-the-kenshi-deep-blockchain-indexing-services-7fc4b159a946"
-    />
-  </div>
-</div>
+      solid
+    >
+      Read article <External />
+    </Button>
+  </Article>
+</Articles>
 
 <Footer />
 
@@ -564,31 +574,6 @@
     margin-top: 0;
     font-size: 2em;
   }
-  .articles {
-    padding: 4em;
-  }
-  @media only screen and (max-width: 640px) {
-    .articles {
-      padding: 2em 1em;
-    }
-  }
-  .articles h2 {
-    font-size: 2em;
-  }
-  .articles .grid {
-    margin-top: 4em;
-    display: grid;
-    grid-template-columns: repeat(
-      auto-fill,
-      minmax(280px, calc((100% - 6em) / 4))
-    );
-    gap: 2em;
-  }
-  @media only screen and (max-width: 500px) {
-    .articles .grid {
-      grid-template-columns: 1fr;
-    }
-  }
 
   .getting-started {
     padding: 4em;
@@ -746,12 +731,6 @@
   @media only screen and (max-width: 600px) {
     .resources {
       gap: 2.5em;
-    }
-    .articles h2 {
-      margin: 0;
-    }
-    .articles .grid {
-      margin-top: 2em;
     }
   }
 </style>
