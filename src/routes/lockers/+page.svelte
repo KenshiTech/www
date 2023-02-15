@@ -25,7 +25,7 @@
   const apikey = "fSDjCXCTyq+cx7+HLXKBA5oGIfqyMwztb+0/7pvTK8I=";
   const owner = "0x51DD193630806aDCFFa9E72569a71A9c12591C33";
   const endpoint = "https://api.kenshi.io/index/graphql";
-  const deployerAddr = "0x4571bce71ce17a85a66825f94d43aef4d2bbb391";
+  const deployerAddr = "0x14677928b375D188d65ac277Ee0a5d72D1dB6e01";
   const kenshiAddr = "0x42f9c5a27a2647a64f7D3d58d8f896C60a727b0f";
 
   let userAddress;

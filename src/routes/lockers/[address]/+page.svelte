@@ -33,7 +33,7 @@
 
   // MAINNET CONTRACT ADDRESS
   const contractAddr = $page.params.address;
-  const deployerAddr = "0x4571bce71ce17a85a66825f94d43aef4d2bbb391";
+  const deployerAddr = "0x14677928b375D188d65ac277Ee0a5d72D1dB6e01";
   const migrationRegistryAddr = "0xC21261F93360B3F9123A4fb26bbB6618aAdeFcaC";
 
   $: contractAddrDisplay = [
@@ -83,7 +83,7 @@
   $: if ($wallet && $wallet.provider) {
     connectWallet($wallet);
   } else if (typeof window !== "undefined") {
-    connectNoWallet();
+    //connectNoWallet();
   }
 
   $: if ($wallet?.provider) {
